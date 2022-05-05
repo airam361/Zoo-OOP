@@ -14,6 +14,8 @@ body {
   background-color: #fffafa;
 }
 
+
+/* --------------------- Header ------------------- */
 header {
   position: fixed;
   z-index: 1;
@@ -44,19 +46,21 @@ header span {
 #root > div {
   display: flex;
   flex-wrap: wrap;
-  width: 60%;
+  width: 70%;
   justify-content: space-evenly;
   margin: 0 auto;
   padding-top: 2rem;
   padding-right: 1rem;
 }
 
+
+/* --------------------- Animal Cards ------------------- */
 .card {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
   padding: 1.5rem 0.5rem 0.5rem;
-  width: 20rem;
+  width: 23rem;
   margin: 0 0 1rem 1rem;
   background-color: #fae4c6;
   border-radius: 12px;
@@ -65,16 +69,17 @@ header span {
 }
 .card__img-wrapper,
 .card__btn-breed {
-  height: 5rem;
-  width: 5rem;
+  position: relative;
+  height: 6rem;
+  width: 6rem;
   margin-left: 1rem;
   margin-bottom: 1rem;
-  padding: 0.7rem;
-  /* background-color: #a2d2ff; */
+  padding: 1rem;
   border-radius: 50%;
 }
 .card__img-wrapper img {
   height: 100%;
+  pointer-events: none;
 }
 .card__btn-breed {
   display: flex;
@@ -100,4 +105,62 @@ header span {
   to {
     margin-top: 0rem;
   }
+}
+
+/* --------------------- POPUP ------------------- */
+.popup-wraper {
+  position: absolute;
+  top: -65px;
+  left: 10px;
+  z-index: 4;
+  pointer-events: none;
+}
+.popup {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  height: 3rem;
+  padding: 0 0.5rem;
+  background: #9aeb90;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1.3rem;
+  border-radius: 25px;
+}
+.popup:after {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: 4;
+  border-style: solid;
+  border-width: 15px 15px 0 0;
+  border-color: #9aeb90 transparent transparent transparent;
+  bottom: -15px;
+  left: 3rem;
+  margin-left: -10px;
+}
+
+/* -------------------- Scroll Bar -------------- */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fae4c6;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffcd87;
 }

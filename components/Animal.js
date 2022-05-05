@@ -1,4 +1,5 @@
 import Helpers from "./Helpers.js";
+import Popup from "./Popup.js";
 
 class Animal {
   constructor(type, gender) {
@@ -7,9 +8,18 @@ class Animal {
     this.id = Helpers.idGenerator();
   }
 
+  makeNoise() {
+    return "Roar!";
+  }
+
   render(renderHook) {
     const animal = document.createElement("div");
     animal.className = "card__img-wrapper";
+
+    animal.addEventListener("click", (event) => {
+      new Popup(event, this.makeNoise);
+    });
+
     if (this.gender === "f") {
       animal.style.backgroundColor = "#FFAFCC";
     } else {

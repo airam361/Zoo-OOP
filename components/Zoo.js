@@ -3,13 +3,9 @@ import Animal from "./Animal.js";
 
 class Zoo {
   animals = {};
-
-  constructor(htmlId, database) {
+  constructor(htmlId) {
     this.htmlId = htmlId;
-    for (const data of database) {
-      const animal = Helpers.createAnimalType(data);
-      this.addAnimal(animal);
-    }
+    this.render();
   }
 
   showAnimals() {
@@ -44,7 +40,7 @@ class Zoo {
       alert(`Cannot breed ${type}!`);
       return;
     }
-    this.showAnimals()
+    this.showAnimals();
   }
 
   render() {
@@ -54,6 +50,7 @@ class Zoo {
     for (let key in this.animals) {
       const animals = document.createElement("div");
       animals.className = "card";
+
       for (let animal of this.animals[key]) {
         animal.render(animals);
       }
