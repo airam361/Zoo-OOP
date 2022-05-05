@@ -15,7 +15,7 @@ class Zoo {
   addAnimal(animal) {
     //primeste un animal instantiat "Bear"
     if (!animal instanceof Animal) {
-      throw new Exception("This is not an animal!");
+      throw new Error("This is not an animal!");
     }
     if (!Object.keys(this.animals).includes(animal.type)) {
       this.animals[animal.type] = [];
