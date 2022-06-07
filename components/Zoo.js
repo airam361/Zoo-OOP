@@ -13,7 +13,7 @@ class Zoo {
   }
 
   addAnimal(animal) {
-    //primeste un animal instantiat "Bear"
+    //primeste un animal instantiat ex:"Bear"
     if (!(animal instanceof Animal)) {
       throw new Error("This is not an animal!");
     }

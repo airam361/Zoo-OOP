@@ -14,7 +14,6 @@ body {
   background-color: #fffafa;
 }
 
-
 /* --------------------- Header ------------------- */
 header {
   position: fixed;
@@ -53,7 +52,6 @@ header span {
   padding-right: 1rem;
 }
 
-
 /* --------------------- Animal Cards ------------------- */
 .card {
   display: flex;
@@ -80,6 +78,9 @@ header span {
 .card__img-wrapper img {
   height: 100%;
   pointer-events: none;
+}
+.card__img-wrapper:hover {
+  cursor: pointer;
 }
 .card__btn-breed {
   display: flex;
